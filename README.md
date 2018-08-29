@@ -20,3 +20,17 @@ Steps
 1. Create a Pivotal Tracker Board
 2. Create a Github Repository, add a README, and clone it to your computer
 
+# Challenge 1 - Create UI Templates
+Timelines
+● Expected Length to Complete: 1 week
+● Due Date: 31/8/2018
+
+Challenge Summary
+You are required to create UI templates with HTML , CSS and Javascript .
+NB:
+● You are not implementing the core functionality yet, you are only building the User
+Interface elements, pages and views!
+● You are to create a pull request to elicit review and feedback for the UI template when
+you are done working on them
+● Do not use any css frameworks e.g bootstrap, materialize .
+● Do not download or use an already built website template.
