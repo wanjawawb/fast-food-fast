@@ -19,6 +19,16 @@ html {
   background:#fff
 }
 
+h1 {
+  text-align: center
+}
+
+h4 { 
+	color:blue; 
+	font-size:70%; 
+	text-align:center;
+}
+
 img {
   border            :1px solid black;
   margin-right      :15px;
