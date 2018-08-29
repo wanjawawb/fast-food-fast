@@ -27,10 +27,11 @@ Timelines
 
 ● Due Date: 31/8/2018
 
-#Challenge Summary
+# Challenge Summary
 You are required to create UI templates with HTML , CSS and Javascript.
 
 NB:
+
 ● You are not implementing the core functionality yet, you are only building the User
 Interface elements, pages and views!
 
