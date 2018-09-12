@@ -1,0 +1,134 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger Rest Article
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /orders:
+    get:
+      operationId: orders.read_all
+      tags:
+        - Orders
+      summary: Read the entire list of orders
+      description: Read the list of orders
+      parameters:
+        - name: length
+          in: query
+          type: integer
+          description: Number of orders to get from orders
+          required: false
+        - name: offset
+          in: query
+          type: integer
+          description: Offset from beginning of list where to start gathering orders
+          required: false
+      responses:
+        200:
+          description: Successfully read orders list operation
+          schema:
+            type: array
+            items:
+              properties:
+                qty:
+                  type: string
+                ordernum:
+                  type: string
+                recorddate:
+                  type: string
+
+    post:
+      operationId: orders.create
+      tags:
+        - Orders
+      summary: Create a order and add it to the orders list
+      description: Create a new order in the orders list
+      parameters:
+        - name: order
+          in: body
+          description: Order to create
+          required: True
+          schema:
+            type: object
+            properties:
+              qty:
+                type: string
+                description: First name of order to create
+              ordernum:
+                type: string
+                description: Last name of order to create
+      responses:
+        201:
+          description: Successfully created order in list
+
+  /orders/{ordernum}:
+    get:
+      operationId: orders.read_one
+      tags:
+        - Orders
+      summary: Read one order from the orders list
+      description: Read one order from the orders list
+      parameters:
+        - name: ordernum
+          in: path
+          description: Last name of the order to get from the list
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read order from orders list operation
+          schema:
+            properties:
+              qty:
+                type: string
+              ordernum:
+                type: string
+              recorddate:
+                type: string
+
+    put:
+      operationId: orders.update
+      tags:
+        - Orders
+      summary: Update a order in the orders list
+      description: Update a order in the orders list
+      parameters:
+        - name: ordernum
+          in: path
+          description: Last name of the order to update in the list
+          type: string
+          required: True
+        - name: order
+          in: body
+          schema:
+            type: object
+            properties:
+              qty:
+                type: string
+              ordernum:
+                type: string
+      responses:
+        200:
+          description: Successfully updated order in orders list
+
+    delete:
+      operationId: orders.delete
+      tags:
+        - Orders
+      summary: Delete a order from the orders list
+      description: Delete a order
+      parameters:
+        - name: ordernum
+          in: path
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully deleted a order from orders list
