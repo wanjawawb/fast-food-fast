@@ -1,5 +1,8 @@
 """
-Orders module 
+orders.py
+Purpose - create, update, delete, edit, display orders
+WanjawaWB@gmail.com
+15-Sep-2018
 """
 
 # global inclusions
