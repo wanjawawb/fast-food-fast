@@ -1,8 +1,13 @@
+//swagger.yml
+//Purpose - create template for create, update, delete, edit, display orders operations by project files
+//WanjawaWB@gmail.com
+//15-Sep-2018
+
 swagger: "2.0"
 info:
-  description: This is the swagger file that goes with our server code
+  description: Swagger file for server setup
   version: "1.0.0"
-  title: Swagger Rest Article
+  title: Swagger file for server setup
 consumes:
   - application/json
 produces:
@@ -17,22 +22,22 @@ paths:
       operationId: orders.read_all
       tags:
         - Orders
-      summary: Read the entire list of orders
-      description: Read the list of orders
+      summary: Read all orders
+      description: Read all orders
       parameters:
         - name: length
           in: query
           type: integer
-          description: Number of orders to get from orders
+          description: Number of orders read
           required: false
         - name: offset
           in: query
           type: integer
-          description: Offset from beginning of list where to start gathering orders
+          description: Where to read from i.e. from beginning of list
           required: false
       responses:
         200:
-          description: Successfully read orders list operation
+          description: Successful read operation
           schema:
             type: array
             items:
@@ -48,8 +53,8 @@ paths:
       operationId: orders.create
       tags:
         - Orders
-      summary: Create a order and add it to the orders list
-      description: Create a new order in the orders list
+      summary: Create new order and add to list
+      description: Create new order and add to list
       parameters:
         - name: order
           in: body
@@ -60,30 +65,30 @@ paths:
             properties:
               qty:
                 type: string
-                description: First name of order to create
+                description: Qty of item
               ordernum:
                 type: string
-                description: Last name of order to create
+                description: Orrder number to create
       responses:
         201:
-          description: Successfully created order in list
+          description: Successful creation of order in list
 
   /orders/{ordernum}:
     get:
       operationId: orders.read_one
       tags:
         - Orders
-      summary: Read one order from the orders list
-      description: Read one order from the orders list
+      summary: Read one order from the list
+      description: Read one order from the list
       parameters:
         - name: ordernum
           in: path
-          description: Last name of the order to get from the list
+          description: Order number
           type: string
           required: True
       responses:
         200:
-          description: Successfully read order from orders list operation
+          description: Successful read of order from list
           schema:
             properties:
               qty:
@@ -97,12 +102,12 @@ paths:
       operationId: orders.update
       tags:
         - Orders
-      summary: Update a order in the orders list
-      description: Update a order in the orders list
+      summary: Update order 
+      description: Update order 
       parameters:
         - name: ordernum
           in: path
-          description: Last name of the order to update in the list
+          description: Order number to update
           type: string
           required: True
         - name: order
@@ -116,14 +121,14 @@ paths:
                 type: string
       responses:
         200:
-          description: Successfully updated order in orders list
+          description: Successful update of order
 
     delete:
       operationId: orders.delete
       tags:
         - Orders
-      summary: Delete a order from the orders list
-      description: Delete a order
+      summary: Delete order
+      description: Delete order
       parameters:
         - name: ordernum
           in: path
@@ -131,4 +136,4 @@ paths:
           required: True
       responses:
         200:
-          description: Successfully deleted a order from orders list
+          description: Successful delete of order
