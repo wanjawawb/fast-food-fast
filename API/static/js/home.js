@@ -1,18 +1,20 @@
 /*
- * JavaScript file for the application to demonstrate
- * using the API
- */
+home.js
+Purpose - JS items used on the home.html page - using MVC method
+WanjawaWB@gmail.com
+15-Sep-2018
+*/
 
-// Create the namespace instance
+// Create namespace
 let ns = {};
 
-// Create the model instance
+// Create model
 ns.model = (function() {
     'use strict';
 
     let $event_pump = $('body');
 
-    // Return the API
+    // Generate API
     return {
         'read': function() {
             let ajax_options = {
@@ -87,14 +89,14 @@ ns.model = (function() {
     };
 }());
 
-// Create the view instance
+// Create view
 ns.view = (function() {
     'use strict';
 
     let $qty = $('#qty'),
         $ordernum = $('#ordernum');
 
-    // return the API
+    // Generate API
     return {
         reset: function() {
             $ordernum.val('');
@@ -106,11 +108,7 @@ ns.view = (function() {
         },
         build_table: function(orders) {
             let rows = ''
-
-            // clear the table
             $('.orders table > tbody').empty();
-
-            // did we get a orders array?
             if (orders) {
                 for (let i=0, l=orders.length; i < l; i++) {
                     rows += `<tr><td class="qty">${orders[i].qty}</td><td class="ordernum">${orders[i].ordernum}</td><td>${orders[i].recorddate}</td></tr>`;
@@ -129,7 +127,7 @@ ns.view = (function() {
     };
 }());
 
-// Create the controller
+// Create controller
 ns.controller = (function(m, v) {
     'use strict';
 
@@ -139,17 +137,17 @@ ns.controller = (function(m, v) {
         $qty = $('#qty'),
         $ordernum = $('#ordernum');
 
-    // Get the data from the model after the controller is done initializing
+    // Get model data after controller finishes
     setTimeout(function() {
         model.read();
     }, 100)
 
-    // Validate input
+    // Validate
     function validate(qty, ordernum) {
         return qty !== "" && ordernum !== "";
     }
 
-    // Create our event handlers
+    // Create event handlers
     $('#create').click(function(e) {
         let qty = $qty.val(),
             ordernum = $ordernum.val();
@@ -212,7 +210,7 @@ ns.controller = (function(m, v) {
         view.update_editor(qty, ordernum);
     });
 
-    // Handle the model events
+    // Model events handling
     $event_pump.on('model_read_success', function(e, data) {
         view.build_table(data);
         view.reset();
