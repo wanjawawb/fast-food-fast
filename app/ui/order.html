@@ -1,0 +1,47 @@
+<!-- Fast Food Fast project order page -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<!-- Presentation layout -->
+    <title>Fast Food Fast</title>
+    <LINK rel="stylesheet" href="styles.css" type="text/css">
+  </head>
+  <body>
+	<center>
+		<canvas id='banner' width='700' height='96'>FFF</canvas>
+	</center>
+	<div class='appname'>Orders</div>
+  	<script src='layoutjs.js'></script>	
+	<br>
+	<!-- Presentation layout -->	
+
+	<ul class='menu'>
+		<li><a href='home.html'>Home</a></li>
+		<li><a href='order.html'>Order</a></li>
+		<li><a href='vieworders.html'>View Orders</a></li>
+		<li><a href='logout.html'>Log out</a></li>
+	</ul>
+	<br>
+	
+	<form method='post' action='order.html'>
+		<span class='fieldname'>&nbsp;Date</span><input type='date'
+			maxlength='16' name='itemdate' value=''><br>
+		<span class='fieldname'>&nbsp;Item</span><input type='text'
+			maxlength='16' name='itemordered' value=''><br>
+		<span class='fieldname'>&nbsp;Qty</span><input type='text'
+			maxlength='5' name='itemqty' value=''><br>
+		<span class='fieldname'>&nbsp;</span>
+		<input type='submit' value='Order'>
+    </form>
+	
+	<!-- How to handle database reads/writes -->
+	<!-- Where to redirect upon successful login -->
+	
+	<br>
+		<span class='info'>Place your orders here</span>
+	<br>
+	<br>
+	<h4>Developed by WanjawaWB[at]gmail.com</h4>
+  </body>
+</html>

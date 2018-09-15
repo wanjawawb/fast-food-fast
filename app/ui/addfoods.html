@@ -1,0 +1,50 @@
+<!-- Fast Food Fast project food items page -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<!-- Presentation layout -->
+    <title>Fast Food Fast</title>
+    <LINK rel="stylesheet" href="styles.css" type="text/css">
+  </head>
+  <body>
+	<center>
+		<canvas id='banner' width='700' height='96'>FFF</canvas>
+	</center>
+	<div class='appname'>Orders</div>
+  	<script src='layoutjs.js'></script>	
+	<br>
+	<!-- Presentation layout -->	
+
+	<ul class='menu'>
+		<li><a href='admin.html'>Home</a></li>
+		<li><a href='viewordersadm.html'>View Orders</a></li>
+		<li><a href='viewfoodsadm.html'>View Foods</a></li>
+	</ul>
+	<br>
+	
+	<form method='post' action='addfoods.html'>
+		<span class='fieldname'>&nbsp;Item</span><input type='text'
+			maxlength='16' name='fooditem' value=''><br>
+		<span class='fieldname'>&nbsp;Cost</span><input type='text'
+			maxlength='5' name='cost' value=''><br>
+		<span class='fieldname'>&nbsp;Ref no.</span><input type='text'
+			maxlength='16' name='refnum' value=''><br>
+		<span class='fieldname'>&nbsp;Prep time</span><input type='text'
+			maxlength='16' name='preptime' value=''><br>
+		<span class='fieldname'>&nbsp;Rating</span><input type='text'
+			maxlength='5' name='rating' value=''><br>			
+		<span class='fieldname'>&nbsp;</span>
+		<input type='submit' value='Add item'>
+    </form>
+	
+	<!-- How to handle database reads/writes/updates -->
+	<!-- Where to redirect upon successful update -->
+	
+	<br>
+		<span class='info'>Update details of food items</span>
+	<br>
+	<br>
+	<h4>Developed by WanjawaWB[at]gmail.com</h4>
+  </body>
+</html>

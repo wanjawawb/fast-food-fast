@@ -1,0 +1,70 @@
+<!-- Fast Food Fast project view orders page -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<!-- Presentation layout -->
+    <title>Fast Food Fast</title>
+    <LINK rel="stylesheet" href="styles.css" type="text/css">
+  </head>
+  <body>
+	<center>
+		<canvas id='banner' width='700' height='96'>FFF</canvas>
+	</center>
+	<div class='appname'>View Food Items</div>
+  	<script src='layoutjs.js'></script>	
+	<br>
+	<!-- Presentation layout -->	
+
+	<ul class='menu'>
+		<li><a href='admin.html'>Home</a></li>
+		<li><a href='viewordersadm.html'>View Orders</a></li>
+		<li><a href='viewfoodsadm.html'>View Foods</a></li>
+	</ul>
+	<br>
+	
+	<table class="data-table">
+		<caption>List of food items</caption>
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Item</th>
+				<th>Cost</th>
+				<th>Ref no.</th>
+				<th>Prep time</th>
+				<th>Rating</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Num</td>
+			<td>Item</td>
+			<td>Cost</td>
+			<td>Ref no.</td>
+			<td>Prep time</td>
+			<td>Rating</td>
+			<td><a href='editfoods.html'>Edit</a></td>
+			<td><input type="checkbox" name="deleteitem" value="deleteitem"></td>
+		</tr>
+		</tbody>
+	</table>
+	<br>	
+	<br>
+	<ul class='menu'>
+		<li><a href='addfoods.html'>Add Foods</a></li>
+	</ul>
+	<br>	
+	<!-- How to list display all or subset -->
+	<!-- How to read from database and populate this table -->
+	<!-- How to to checkbox status to update database -->
+	<!-- How to redirect upon edit selection -->
+	
+	<br>
+		<span class='info'>List of foods to add/view/edit/delete</span>
+	<br>
+	<br>
+	<h4>Developed by WanjawaWB[at]gmail.com</h4>
+  </body>
+</html>
