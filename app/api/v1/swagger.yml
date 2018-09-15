@@ -1,0 +1,139 @@
+//swagger.yml
+//Purpose - create template for create, update, delete, edit, display orders operations by project files
+//WanjawaWB@gmail.com
+//15-Sep-2018
+
+swagger: "2.0"
+info:
+  description: Swagger file for server setup
+  version: "1.0.0"
+  title: Swagger file for server setup
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /orders:
+    get:
+      operationId: orders.read_all
+      tags:
+        - Orders
+      summary: Read all orders
+      description: Read all orders
+      parameters:
+        - name: length
+          in: query
+          type: integer
+          description: Number of orders read
+          required: false
+        - name: offset
+          in: query
+          type: integer
+          description: Where to read from i.e. from beginning of list
+          required: false
+      responses:
+        200:
+          description: Successful read operation
+          schema:
+            type: array
+            items:
+              properties:
+                qty:
+                  type: string
+                ordernum:
+                  type: string
+                recorddate:
+                  type: string
+
+    post:
+      operationId: orders.create
+      tags:
+        - Orders
+      summary: Create new order and add to list
+      description: Create new order and add to list
+      parameters:
+        - name: order
+          in: body
+          description: Order to create
+          required: True
+          schema:
+            type: object
+            properties:
+              qty:
+                type: string
+                description: Qty of item
+              ordernum:
+                type: string
+                description: Orrder number to create
+      responses:
+        201:
+          description: Successful creation of order in list
+
+  /orders/{ordernum}:
+    get:
+      operationId: orders.read_one
+      tags:
+        - Orders
+      summary: Read one order from the list
+      description: Read one order from the list
+      parameters:
+        - name: ordernum
+          in: path
+          description: Order number
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successful read of order from list
+          schema:
+            properties:
+              qty:
+                type: string
+              ordernum:
+                type: string
+              recorddate:
+                type: string
+
+    put:
+      operationId: orders.update
+      tags:
+        - Orders
+      summary: Update order 
+      description: Update order 
+      parameters:
+        - name: ordernum
+          in: path
+          description: Order number to update
+          type: string
+          required: True
+        - name: order
+          in: body
+          schema:
+            type: object
+            properties:
+              qty:
+                type: string
+              ordernum:
+                type: string
+      responses:
+        200:
+          description: Successful update of order
+
+    delete:
+      operationId: orders.delete
+      tags:
+        - Orders
+      summary: Delete order
+      description: Delete order
+      parameters:
+        - name: ordernum
+          in: path
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successful delete of order
