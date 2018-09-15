@@ -1,4 +1,9 @@
-#python code for connecting the server instance, then calling the rest of the web files
+"""
+connector.py
+Purpose - connect to server and execute project files
+WanjawaWB@gmail.com
+15-Sep-2018
+"""
 from flask import render_template
 import connexion
 
@@ -12,8 +17,8 @@ app.add_api('swagger.yml')
 @app.route('/')
 def home():
     """
-    Rsponds browser URL localhost:5000/
-    :return:        "home.html"
+    Point browser to URL localhost:5000/
+    :return:        home.html
     """
     return render_template("home.html")
 
