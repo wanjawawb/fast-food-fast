@@ -1,7 +1,7 @@
-//swagger.yml
-//Purpose - create template for create, update, delete, edit, display orders operations by project files
-//WanjawaWB@gmail.com
-//15-Sep-2018
+# swagger.yml
+# Purpose - create template for create, update, delete, edit, display orders operations by project files
+# WanjawaWB@gmail.com
+# 15-Sep-2018
 
 swagger: "2.0"
 info:
